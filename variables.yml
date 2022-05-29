@@ -38,3 +38,13 @@
       ansible.builtin.debug:
         msg: OS Distribution = {{ ansible_distribution }}
 ## Facts can be overwritten by vars from user, usually its not a good practise
+
+- name: Registered variable
+  hosts: all
+  tasks:
+    - name: uptime command
+      ansible.builtin.shell: uptime
+      register: OUT
+    - name: Print OUT
+      ansible.builtin.debug:
+        msg: {{ OUT }}
