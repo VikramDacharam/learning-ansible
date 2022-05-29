@@ -22,3 +22,10 @@
       ansible.builtin.debug:
         msg: URL = {{ URL }}
 
+- name: inv variables
+  hosts: all
+  tasks:
+    - name: Print URL
+      ansible.builtin.debug:
+        msg: URL = {{ URL }}
+
