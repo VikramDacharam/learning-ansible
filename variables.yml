@@ -13,3 +13,12 @@
       vars:
         URL: tasks.example.com
 
+- name: Files Variable
+  hosts: all
+  vars_files:
+    - sample-vars.yml
+  tasks:
+    - name: Print URL
+      ansible.builtin.debug:
+        msg: URL = {{ URL }}
+
