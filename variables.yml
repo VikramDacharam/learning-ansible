@@ -47,4 +47,8 @@
       register: OUT
     - name: Print OUT
       ansible.builtin.debug:
-        msg: "{{OUT}}"
+        msg: "{{OUT.stdout}}"
+
+    - name: set a variable
+      ansible.builtin.set_fact:
+        STDOUT: "{{OUT.stdout}}"
