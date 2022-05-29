@@ -31,6 +31,8 @@
 
 - name: Facts
   hosts: all
+  vars:
+    ansible_distribution: TEST
   tasks:
     - name: print Fact
       ansible.builtin.debug:
