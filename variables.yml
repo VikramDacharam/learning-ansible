@@ -29,3 +29,10 @@
       ansible.builtin.debug:
         msg: URL = {{ URL }}
 
+- name: Facts
+  hosts: all
+  tasks:
+    - name: print Fact
+      ansible.builtin.debug:
+        msg: OS Distribution = {{ ansible_distribution }}
+## Facts can be overwritten by vars from user, usually its not a good practise
